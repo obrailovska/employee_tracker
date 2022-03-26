@@ -3,20 +3,16 @@ console.log("yo");
 const mysql = require("mysql2");
 const inquirer = require("inquirer");
 const cTable = require("console.table");
-// const { connected } = require("process");
 
-// require("dotenv").config();
-// // require generateMarkdown file
-// const generateMarkdown = require("./utils/generateMarkdown");
+require("dotenv").config();
+
 console.log("yo");
 const connection = mysql.createConnection({
   host: "localhost",
-  //   user: process.env.DB_USER,
-  //   password: process.env.DB_PW,
-  user: "root",
-  password: "root_password",
+  user: process.env.DB_USER,
+  password: process.env.DB_PW,
+
   database: "employee_tracker",
-  //   port: 8000,
 });
 connection.connect(function (err) {
   if (err) throw err;
